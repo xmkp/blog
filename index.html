@@ -32,7 +32,7 @@
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
 			
-			<img lazy-src="null" class="js-avatar">
+			<img lazy-src="/img/icon.png" class="js-avatar">
 			
 		</a>
 
@@ -79,7 +79,7 @@
 						<li>Links</li>
 						
 						
-						<li>About</li>
+						<li>Über</li>
 						
 					</ul>
 				</div>
@@ -95,6 +95,8 @@
 							<li><a href="/">主页</a></li>
 				        
 							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags">随笔</a></li>
 				        
 						</ul>
 					</nav>
@@ -116,7 +118,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						
+						<a href="/tags/js-槐尧-小马/" style="font-size: 10px;">js 槐尧  小马</a>
 					</div>
 				</section>
 				
@@ -127,16 +129,6 @@
 					
 			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
 			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
-			        
 			        </div>
 				</section>
 				
@@ -145,7 +137,7 @@
 				
 				<section class="switch-part switch-part4">
 				
-					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+					<div id="js-aboutme">吾之所向一往无前，愈挫愈勇，再接再厉</div>
 				</section>
 				
 			</div>
@@ -164,7 +156,7 @@
 		<header id="header" class="inner">
 			<div class="profilepic">
 			
-				<img lazy-src="null" class="js-avatar">
+				<img lazy-src="/img/icon.png" class="js-avatar">
 			
 			</div>
 			<hgroup>
@@ -179,6 +171,8 @@
 					<li><a href="/">主页</a></li>
 		        
 					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags">随笔</a></li>
 		        
 		        <div class="clearfix"></div>
 				</ul>
@@ -201,6 +195,68 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-hexocreate" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/28/hexocreate/" class="article-date">
+  	<time datetime="2016-03-28T09:33:40.000Z" itemprop="datePublished">2016-03-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/28/hexocreate/">hexocreate</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">local</span> transform;</span><br><span class="line"><span class="built_in">local</span> gameObject;</span><br><span class="line"></span><br><span class="line">PromptPanel = &#123;&#125;;</span><br><span class="line"><span class="built_in">local</span> this = PromptPanel;</span><br><span class="line"></span><br><span class="line">--启动事件--</span><br><span class="line"><span class="keyword">function</span> PromptPanel.Awake(obj)</span><br><span class="line">	gameObject = obj;</span><br><span class="line">	transform = obj.transform;</span><br><span class="line"></span><br><span class="line">	this.InitPanel();</span><br><span class="line">	<span class="built_in">log</span>Warn(<span class="string">"Awake lua---&gt;&gt;"</span>..gameObject.name);</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">--初始化面板--</span><br><span class="line"><span class="keyword">function</span> PromptPanel.InitPanel()</span><br><span class="line">	this.btnOpen = transform:FindChild(<span class="string">"Open"</span>).gameObject;</span><br><span class="line">	this.gridParent = transform:FindChild(<span class="string">'ScrollView/Grid'</span>);</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">--单击事件--</span><br><span class="line"><span class="keyword">function</span> PromptPanel.OnDestroy()</span><br><span class="line">	<span class="built_in">log</span>Warn(<span class="string">"OnDestroy----&gt;&gt;&gt;"</span>);</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p>hexo-theme-yilia 是为 hexo 2.4+制作的主题。<br>响应式设计，风格简约。<br>终于从octopress迁移到hexo。Yilia是自己设计的主题，分享之，有爱请自取。关于主题：<br>我喜欢简约。所以标签云，搜索框都拿掉了<br>接地气一点。所以用上了jiathis分享，友言评论，以及baidu的cdn<br>让大家把注意力放到内容上。这是本主题设计初衷<br>主题不支持IE6，7，8。以后也不会</p>
+<p>以上是摘要<br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js-槐尧-小马/">js 槐尧  小马</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/28/hexocreate/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   
