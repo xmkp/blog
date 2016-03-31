@@ -4,18 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>hexocreate | 小马快跑</title>
+  <title>使用Hexo在GitHub上搭建自己的博客 | 小马快跑</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="12345678910111213141516171819202122232425local transform;local gameObject;PromptPanel = &amp;#123;&amp;#125;;local this = PromptPanel;--启动事件--function PromptPanel.Awake(obj)	gameObject = obj;	transform = obj.">
+  <meta name="description">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexocreate">
+<meta property="og:title" content="使用Hexo在GitHub上搭建自己的博客">
 <meta property="og:url" content="http://yoursite.com/2016/03/28/hexocreate/index.html">
 <meta property="og:site_name" content="小马快跑">
-<meta property="og:description" content="12345678910111213141516171819202122232425local transform;local gameObject;PromptPanel = &amp;#123;&amp;#125;;local this = PromptPanel;--启动事件--function PromptPanel.Awake(obj)	gameObject = obj;	transform = obj.">
-<meta property="og:updated_time" content="2016-03-28T09:54:25.241Z">
+<meta property="og:description">
+<meta property="og:updated_time" content="2016-03-28T10:00:52.401Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexocreate">
-<meta name="twitter:description" content="12345678910111213141516171819202122232425local transform;local gameObject;PromptPanel = &amp;#123;&amp;#125;;local this = PromptPanel;--启动事件--function PromptPanel.Awake(obj)	gameObject = obj;	transform = obj.">
+<meta name="twitter:title" content="使用Hexo在GitHub上搭建自己的博客">
+<meta name="twitter:description">
   
     <link rel="alternative" href="/atom.xml" title="小马快跑" type="application/atom+xml">
   
@@ -212,7 +212,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      hexocreate
+      使用Hexo在GitHub上搭建自己的博客
     </h1>
   
 
@@ -232,66 +232,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">local</span> transform;</span><br><span class="line"><span class="built_in">local</span> gameObject;</span><br><span class="line"></span><br><span class="line">PromptPanel = &#123;&#125;;</span><br><span class="line"><span class="built_in">local</span> this = PromptPanel;</span><br><span class="line"></span><br><span class="line">--启动事件--</span><br><span class="line"><span class="keyword">function</span> PromptPanel.Awake(obj)</span><br><span class="line">	gameObject = obj;</span><br><span class="line">	transform = obj.transform;</span><br><span class="line"></span><br><span class="line">	this.InitPanel();</span><br><span class="line">	<span class="built_in">log</span>Warn(<span class="string">"Awake lua---&gt;&gt;"</span>..gameObject.name);</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">--初始化面板--</span><br><span class="line"><span class="keyword">function</span> PromptPanel.InitPanel()</span><br><span class="line">	this.btnOpen = transform:FindChild(<span class="string">"Open"</span>).gameObject;</span><br><span class="line">	this.gridParent = transform:FindChild(<span class="string">'ScrollView/Grid'</span>);</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">--单击事件--</span><br><span class="line"><span class="keyword">function</span> PromptPanel.OnDestroy()</span><br><span class="line">	<span class="built_in">log</span>Warn(<span class="string">"OnDestroy----&gt;&gt;&gt;"</span>);</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-<p>hexo-theme-yilia 是为 hexo 2.4+制作的主题。<br>响应式设计，风格简约。<br>终于从octopress迁移到hexo。Yilia是自己设计的主题，分享之，有爱请自取。关于主题：<br>我喜欢简约。所以标签云，搜索框都拿掉了<br>接地气一点。所以用上了jiathis分享，友言评论，以及baidu的cdn<br>让大家把注意力放到内容上。这是本主题设计初衷<br>主题不支持IE6，7，8。以后也不会</p>
-<p>以上是摘要<br><a id="more"></a><br>以下是余下全文</p>
-<p>一、使用</p>
-<ol>
-<li>安装<br>1<br>$ git clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="external">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia</li>
-<li>配置<br>修改hexo根目录下的 _config.yml ： theme: yilia</li>
-<li>更新<br>1<br>2<br>cd themes/yilia<br>git pull<br>二、外观<br>宽屏<br>宽屏<br>宽屏文字<br>宽屏文字<br>窄屏<br>窄屏<br>同步instagram<br>同步instagram<br>移动端<br>移动端<br>移动端<br>三、配置<br>主题配置文件在主目录下的_config.yml：</li>
-</ol>
-<h1 id="Header"><a href="#Header" class="headerlink" title="Header"></a>Header</h1><p>menu:<br>  主页: /<br>  所有文章: /archives</p>
-<h1 id="随笔-tags-随笔"><a href="#随笔-tags-随笔" class="headerlink" title="随笔: /tags/随笔"></a>随笔: /tags/随笔</h1><h1 id="SubNav"><a href="#SubNav" class="headerlink" title="SubNav"></a>SubNav</h1><p>subnav:<br>  github: “<a href="https://github.com/litten" target="_blank" rel="external">https://github.com/litten</a>“<br>  weibo: “<a href="http://weibo.com/litten225" target="_blank" rel="external">http://weibo.com/litten225</a>“<br>  rss: “<a href="http://feed.feedsky.com/litten" target="_blank" rel="external">http://feed.feedsky.com/litten</a>“</p>
-<h1 id="facebook-“-“"><a href="#facebook-“-“" class="headerlink" title="facebook: “/“"></a>facebook: “/“</h1><h1 id="google-“-“"><a href="#google-“-“" class="headerlink" title="google: “/“"></a>google: “/“</h1><h1 id="twitter-“-“"><a href="#twitter-“-“" class="headerlink" title="twitter: “/“"></a>twitter: “/“</h1><h1 id="linkedin-“-“"><a href="#linkedin-“-“" class="headerlink" title="linkedin: “/“"></a>linkedin: “/“</h1><p>rss: /atom.xml</p>
-<h1 id="Content"><a href="#Content" class="headerlink" title="Content"></a>Content</h1><p>excerpt_link: more<br>fancybox: true</p>
-<h1 id="Miscellaneous"><a href="#Miscellaneous" class="headerlink" title="Miscellaneous"></a>Miscellaneous</h1><p>favicon: /favicon.png</p>
-<p>avatar: “<a href="https://avatars2.githubusercontent.com/u/2024949?v=2&amp;s=150" target="_blank" rel="external">https://avatars2.githubusercontent.com/u/2024949?v=2&amp;s=150</a>“<br>share: true</p>
-<p>hexo-theme-yilia 是为 hexo 2.4+制作的主题。<br>响应式设计，风格简约。<br>终于从octopress迁移到hexo。Yilia是自己设计的主题，分享之，有爱请自取。关于主题：<br>我喜欢简约。所以标签云，搜索框都拿掉了<br>接地气一点。所以用上了jiathis分享，友言评论，以及baidu的cdn<br>让大家把注意力放到内容上。这是本主题设计初衷<br>主题不支持IE6，7，8。以后也不会<br>一、使用</p>
-<ol>
-<li>安装<br>1<br>$ git clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="external">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia</li>
-<li>配置<br>修改hexo根目录下的 _config.yml ： theme: yilia</li>
-<li>更新<br>1<br>2<br>cd themes/yilia<br>git pull<br>二、外观<br>宽屏<br>宽屏<br>宽屏文字<br>宽屏文字<br>窄屏<br>窄屏<br>同步instagram<br>同步instagram<br>移动端<br>移动端<br>移动端<br>三、配置<br>主题配置文件在主目录下的_config.yml：<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<h1 id="Header-1"><a href="#Header-1" class="headerlink" title="Header"></a>Header</h1>menu:<br>主页: /<br>所有文章: /archives<h1 id="随笔-tags-随笔-1"><a href="#随笔-tags-随笔-1" class="headerlink" title="随笔: /tags/随笔"></a>随笔: /tags/随笔</h1></li>
-</ol>
-<h1 id="SubNav-1"><a href="#SubNav-1" class="headerlink" title="SubNav"></a>SubNav</h1><p>subnav:<br>  github: “<a href="https://github.com/litten" target="_blank" rel="external">https://github.com/litten</a>“<br>  weibo: “<a href="http://weibo.com/litten225" target="_blank" rel="external">http://weibo.com/litten225</a>“<br>  rss: “<a href="http://feed.feedsky.com/litten" target="_blank" rel="external">http://feed.feedsky.com/litten</a>“</p>
-<h1 id="facebook-“-“-1"><a href="#facebook-“-“-1" class="headerlink" title="facebook: “/“"></a>facebook: “/“</h1><h1 id="google-“-“-1"><a href="#google-“-“-1" class="headerlink" title="google: “/“"></a>google: “/“</h1><h1 id="twitter-“-“-1"><a href="#twitter-“-“-1" class="headerlink" title="twitter: “/“"></a>twitter: “/“</h1><h1 id="linkedin-“-“-1"><a href="#linkedin-“-“-1" class="headerlink" title="linkedin: “/“"></a>linkedin: “/“</h1><p>rss: /atom.xml</p>
-<h1 id="Content-1"><a href="#Content-1" class="headerlink" title="Content"></a>Content</h1><p>excerpt_link: more<br>fancybox: true</p>
-<h1 id="Miscellaneous-1"><a href="#Miscellaneous-1" class="headerlink" title="Miscellaneous"></a>Miscellaneous</h1><p>favicon: /favicon.png</p>
-<p>avatar: “<a href="https://avatars2.githubusercontent.com/u/2024949?v=2&amp;s=150" target="_blank" rel="external">https://avatars2.githubusercontent.com/u/2024949?v=2&amp;s=150</a>“<br>share: true</p>
-<p>hexo-theme-yilia 是为 hexo 2.4+制作的主题。<br>响应式设计，风格简约。<br>终于从octopress迁移到hexo。Yilia是自己设计的主题，分享之，有爱请自取。关于主题：<br>我喜欢简约。所以标签云，搜索框都拿掉了<br>接地气一点。所以用上了jiathis分享，友言评论，以及baidu的cdn<br>让大家把注意力放到内容上。这是本主题设计初衷<br>主题不支持IE6，7，8。以后也不会<br>一、使用</p>
-<ol>
-<li>安装<br>1<br>$ git clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="external">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia</li>
-<li>配置<br>修改hexo根目录下的 _config.yml ： theme: yilia</li>
-<li>更新<br>1<br>2<br>cd themes/yilia<br>git pull<br>二、外观<br>宽屏<br>宽屏<br>宽屏文字<br>宽屏文字<br>窄屏<br>窄屏<br>同步instagram<br>同步instagram<br>移动端<br>移动端<br>移动端<br>三、配置<br>主题配置文件在主目录下的_config.yml：<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<h1 id="Header-2"><a href="#Header-2" class="headerlink" title="Header"></a>Header</h1>menu:<br>主页: /<br>所有文章: /archives<h1 id="随笔-tags-随笔-2"><a href="#随笔-tags-随笔-2" class="headerlink" title="随笔: /tags/随笔"></a>随笔: /tags/随笔</h1></li>
-</ol>
-<h1 id="SubNav-2"><a href="#SubNav-2" class="headerlink" title="SubNav"></a>SubNav</h1><p>subnav:<br>  github: “<a href="https://github.com/litten" target="_blank" rel="external">https://github.com/litten</a>“<br>  weibo: “<a href="http://weibo.com/litten225" target="_blank" rel="external">http://weibo.com/litten225</a>“<br>  rss: “<a href="http://feed.feedsky.com/litten" target="_blank" rel="external">http://feed.feedsky.com/litten</a>“</p>
-<h1 id="facebook-“-“-2"><a href="#facebook-“-“-2" class="headerlink" title="facebook: “/“"></a>facebook: “/“</h1><h1 id="google-“-“-2"><a href="#google-“-“-2" class="headerlink" title="google: “/“"></a>google: “/“</h1><h1 id="twitter-“-“-2"><a href="#twitter-“-“-2" class="headerlink" title="twitter: “/“"></a>twitter: “/“</h1><h1 id="linkedin-“-“-2"><a href="#linkedin-“-“-2" class="headerlink" title="linkedin: “/“"></a>linkedin: “/“</h1><p>rss: /atom.xml</p>
-<h1 id="Content-2"><a href="#Content-2" class="headerlink" title="Content"></a>Content</h1><p>excerpt_link: more<br>fancybox: true</p>
-<h1 id="Miscellaneous-2"><a href="#Miscellaneous-2" class="headerlink" title="Miscellaneous"></a>Miscellaneous</h1><p>favicon: /favicon.png</p>
-<p>avatar: “<a href="https://avatars2.githubusercontent.com/u/2024949?v=2&amp;s=150" target="_blank" rel="external">https://avatars2.githubusercontent.com/u/2024949?v=2&amp;s=150</a>“<br>share: true</p>
-<p>hexo-theme-yilia 是为 hexo 2.4+制作的主题。<br>响应式设计，风格简约。<br>终于从octopress迁移到hexo。Yilia是自己设计的主题，分享之，有爱请自取。关于主题：<br>我喜欢简约。所以标签云，搜索框都拿掉了<br>接地气一点。所以用上了jiathis分享，友言评论，以及baidu的cdn<br>让大家把注意力放到内容上。这是本主题设计初衷<br>主题不支持IE6，7，8。以后也不会<br>一、使用</p>
-<ol>
-<li>安装<br>1<br>$ git clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="external">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia</li>
-<li>配置<br>修改hexo根目录下的 _config.yml ： theme: yilia</li>
-<li>更新<br>1<br>2<br>cd themes/yilia<br>git pull<br>二、外观<br>宽屏<br>宽屏<br>宽屏文字<br>宽屏文字<br>窄屏<br>窄屏<br>同步instagram<br>同步instagram<br>移动端<br>移动端<br>移动端<br>三、配置<br>主题配置文件在主目录下的_config.yml：<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<h1 id="Header-3"><a href="#Header-3" class="headerlink" title="Header"></a>Header</h1>menu:<br>主页: /<br>所有文章: /archives<h1 id="随笔-tags-随笔-3"><a href="#随笔-tags-随笔-3" class="headerlink" title="随笔: /tags/随笔"></a>随笔: /tags/随笔</h1></li>
-</ol>
-<h1 id="SubNav-3"><a href="#SubNav-3" class="headerlink" title="SubNav"></a>SubNav</h1><p>subnav:<br>  github: “<a href="https://github.com/litten" target="_blank" rel="external">https://github.com/litten</a>“<br>  weibo: “<a href="http://weibo.com/litten225" target="_blank" rel="external">http://weibo.com/litten225</a>“<br>  rss: “<a href="http://feed.feedsky.com/litten" target="_blank" rel="external">http://feed.feedsky.com/litten</a>“</p>
-<h1 id="facebook-“-“-3"><a href="#facebook-“-“-3" class="headerlink" title="facebook: “/“"></a>facebook: “/“</h1><h1 id="google-“-“-3"><a href="#google-“-“-3" class="headerlink" title="google: “/“"></a>google: “/“</h1><h1 id="twitter-“-“-3"><a href="#twitter-“-“-3" class="headerlink" title="twitter: “/“"></a>twitter: “/“</h1><h1 id="linkedin-“-“-3"><a href="#linkedin-“-“-3" class="headerlink" title="linkedin: “/“"></a>linkedin: “/“</h1><p>rss: /atom.xml</p>
-<h1 id="Content-3"><a href="#Content-3" class="headerlink" title="Content"></a>Content</h1><p>excerpt_link: more<br>fancybox: true</p>
-<h1 id="Miscellaneous-3"><a href="#Miscellaneous-3" class="headerlink" title="Miscellaneous"></a>Miscellaneous</h1><p>favicon: /favicon.png</p>
-<p>avatar: “<a href="https://avatars2.githubusercontent.com/u/2024949?v=2&amp;s=150" target="_blank" rel="external">https://avatars2.githubusercontent.com/u/2024949?v=2&amp;s=150</a>“<br>share: true</p>
-<p>hexo-theme-yilia 是为 hexo 2.4+制作的主题。<br>响应式设计，风格简约。<br>终于从octopress迁移到hexo。Yilia是自己设计的主题，分享之，有爱请自取。关于主题：<br>我喜欢简约。所以标签云，搜索框都拿掉了<br>接地气一点。所以用上了jiathis分享，友言评论，以及baidu的cdn<br>让大家把注意力放到内容上。这是本主题设计初衷<br>主题不支持IE6，7，8。以后也不会<br>一、使用</p>
-<ol>
-<li>安装<br>1<br>$ git clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="external">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia</li>
-<li>配置<br>修改hexo根目录下的 _config.yml ： theme: yilia</li>
-<li>更新<br>1<br>2<br>cd themes/yilia<br>git pull<br>二、外观<br>宽屏<br>宽屏<br>宽屏文字<br>宽屏文字<br>窄屏<br>窄屏<br>同步instagram<br>同步instagram<br>移动端<br>移动端<br>移动端<br>三、配置<br>主题配置文件在主目录下的_config.yml：<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<h1 id="Header-4"><a href="#Header-4" class="headerlink" title="Header"></a>Header</h1>menu:<br>主页: /<br>所有文章: /archives<h1 id="随笔-tags-随笔-4"><a href="#随笔-tags-随笔-4" class="headerlink" title="随笔: /tags/随笔"></a>随笔: /tags/随笔</h1></li>
-</ol>
-<h1 id="SubNav-4"><a href="#SubNav-4" class="headerlink" title="SubNav"></a>SubNav</h1><p>subnav:<br>  github: “<a href="https://github.com/litten" target="_blank" rel="external">https://github.com/litten</a>“<br>  weibo: “<a href="http://weibo.com/litten225" target="_blank" rel="external">http://weibo.com/litten225</a>“<br>  rss: “<a href="http://feed.feedsky.com/litten" target="_blank" rel="external">http://feed.feedsky.com/litten</a>“</p>
-<h1 id="facebook-“-“-4"><a href="#facebook-“-“-4" class="headerlink" title="facebook: “/“"></a>facebook: “/“</h1><h1 id="google-“-“-4"><a href="#google-“-“-4" class="headerlink" title="google: “/“"></a>google: “/“</h1><h1 id="twitter-“-“-4"><a href="#twitter-“-“-4" class="headerlink" title="twitter: “/“"></a>twitter: “/“</h1><h1 id="linkedin-“-“-4"><a href="#linkedin-“-“-4" class="headerlink" title="linkedin: “/“"></a>linkedin: “/“</h1><p>rss: /atom.xml</p>
-<h1 id="Content-4"><a href="#Content-4" class="headerlink" title="Content"></a>Content</h1><p>excerpt_link: more<br>fancybox: true</p>
-<h1 id="Miscellaneous-4"><a href="#Miscellaneous-4" class="headerlink" title="Miscellaneous"></a>Miscellaneous</h1><p>favicon: /favicon.png</p>
-<p>avatar: “<a href="https://avatars2.githubusercontent.com/u/2024949?v=2&amp;s=150" target="_blank" rel="external">https://avatars2.githubusercontent.com/u/2024949?v=2&amp;s=150</a>“<br>share: true</p>
-
+        
       
     </div>
     
@@ -299,6 +240,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2016/03/31/hexocommend/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          hexocommend
+        
+      </div>
+    </a>
   
   
     <a href="/2016/03/28/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
@@ -337,7 +287,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="hexocreate" data-title="hexocreate" data-url="http://yoursite.com/2016/03/28/hexocreate/"></div>
+	<div class="ds-thread" data-thread-key="hexocreate" data-title="使用Hexo在GitHub上搭建自己的博客" data-url="http://yoursite.com/2016/03/28/hexocreate/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

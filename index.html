@@ -196,6 +196,58 @@
 
       <div class="body-wrap">
   
+    <article id="post-hexocommend" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/31/hexocommend/" class="article-date">
+  	<time datetime="2016-03-31T01:45:47.000Z" itemprop="datePublished">2016-03-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/31/hexocommend/">hexocommend</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-hexocreate" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -213,7 +265,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/28/hexocreate/">hexocreate</a>
+      <a class="article-title" href="/2016/03/28/hexocreate/">使用Hexo在GitHub上搭建自己的博客</a>
     </h1>
   
 
@@ -222,9 +274,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">local</span> transform;</span><br><span class="line"><span class="built_in">local</span> gameObject;</span><br><span class="line"></span><br><span class="line">PromptPanel = &#123;&#125;;</span><br><span class="line"><span class="built_in">local</span> this = PromptPanel;</span><br><span class="line"></span><br><span class="line">--启动事件--</span><br><span class="line"><span class="keyword">function</span> PromptPanel.Awake(obj)</span><br><span class="line">	gameObject = obj;</span><br><span class="line">	transform = obj.transform;</span><br><span class="line"></span><br><span class="line">	this.InitPanel();</span><br><span class="line">	<span class="built_in">log</span>Warn(<span class="string">"Awake lua---&gt;&gt;"</span>..gameObject.name);</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">--初始化面板--</span><br><span class="line"><span class="keyword">function</span> PromptPanel.InitPanel()</span><br><span class="line">	this.btnOpen = transform:FindChild(<span class="string">"Open"</span>).gameObject;</span><br><span class="line">	this.gridParent = transform:FindChild(<span class="string">'ScrollView/Grid'</span>);</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">--单击事件--</span><br><span class="line"><span class="keyword">function</span> PromptPanel.OnDestroy()</span><br><span class="line">	<span class="built_in">log</span>Warn(<span class="string">"OnDestroy----&gt;&gt;&gt;"</span>);</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-<p>hexo-theme-yilia 是为 hexo 2.4+制作的主题。<br>响应式设计，风格简约。<br>终于从octopress迁移到hexo。Yilia是自己设计的主题，分享之，有爱请自取。关于主题：<br>我喜欢简约。所以标签云，搜索框都拿掉了<br>接地气一点。所以用上了jiathis分享，友言评论，以及baidu的cdn<br>让大家把注意力放到内容上。这是本主题设计初衷<br>主题不支持IE6，7，8。以后也不会</p>
-<p>以上是摘要<br>
+        
       
     </div>
     
@@ -237,10 +287,6 @@
 
       
 
-      
-        <p class="article-more-link">
-          <a  href="/2016/03/28/hexocreate/#more">more >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
