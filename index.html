@@ -79,7 +79,7 @@
 						<li>Links</li>
 						
 						
-						<li>About</li>
+						<li>Über</li>
 						
 					</ul>
 				</div>
@@ -211,88 +211,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="通用流程图"><a href="#通用流程图" class="headerlink" title="通用流程图"></a><strong>通用流程图</strong></h3><p><img src="http://git.oschina.net/uploads/images/2016/0219/160849_26793774_99114.png" alt="流程图" title="通用流程图"><br><strong>通用流程图简述</strong><br>以hello.xls为例 </p>
-<blockquote>
-<ol>
-<li>在python运行时下，依赖proto组件、xlrd的组件，使用xls_deploy_tool.py处理Hello.xls，生成Hello.data数据文件、及其对应的Hello.proto解释类。</li>
-<li>在windows系统下，使用protoc.exe，将proto解释类转成中间格式Hello.desc。</li>
-<li>将中间格式Hello.desc用语言工具翻译成其他语言解释类比如c#解释类Hello.cs。</li>
-<li>将中间格式Hello.desc用语言工具翻译成其他语言解释类比如c#解释类Hello.cs。</li>
-</ol>
-</blockquote>
-<p><strong>所需工具以及安装流程</strong></p>
-<p>所需工具下载地址：链接：<a href="http://pan.baidu.com/s/1nunj7OP" target="_blank" rel="external">http://pan.baidu.com/s/1nunj7OP</a> 密码：j00k</p>
-<p><strong>安装python</strong></p>
-<ol>
-<li>安装python，并将路径添加到本地的环境变量的path中</li>
-</ol>
-<p><img src="http://git.oschina.net/uploads/images/2016/0219/162817_3643dd8f_99114.png" alt="path" title="path"></p>
-<p><strong>安装protobuff</strong></p>
-<blockquote>
-<ol>
-<li>找到下载的工具包中的“全文件压缩包”（protobuf-2.5.0.tar.bz2）和“编译器压缩包”（protoc-2.5.0-win32.zip）。</li>
-<li>将“protobuf-2.5.0.tar.bz2”解压。</li>
-<li>将“protoc-2.5.0-win32.zip”解压,并将目录添加到本地的环境变量的path中。</li>
-<li>在里面创建compiler文件夹，即protobuf-2.5.0\python\google\protobuf\compiler。</li>
-<li>将“编译器压缩包”里的protoc.exe拷到protobuf-2.5.0\src。</li>
-<li>用命令行进入刚解压的protobuf\python目录，执行命令python setup.py install。</li>
-</ol>
-</blockquote>
-<p><strong>安装xlrd（xls reader）</strong> </p>
-<blockquote>
-<ol>
-<li>这里是列表文本 找到下载的工具包中的xlrd-0.9.4.tar.gz并解压</li>
-<li>用命令行进入刚解压的xlrd目录，执行命令python setup.py install</li>
-</ol>
-</blockquote>
-<p><strong>xls_deploy_tool.py介绍</strong></p>
-<p><a href="http://https://github.com/jameyli/tnt/tree/master/python" target="_blank" rel="external">xls_deploy_tool.py</a>是腾讯魔方工作室<a href="http://https://github.com/jameyli" target="_blank" rel="external">jameyli</a>同学的作品.xls格式请遵循<a href="https://github.com/jameyli/tnt/blob/master/python/xls_deploy_tool.py" target="_blank" rel="external">此格式</a></p>
-<pre><code>使用方法是在命令行键入如下命令
-    python xls_deploy_tool.py &lt;表格名&gt; &lt;xls文件名&gt;
-它将“符合格式”的xls文件生成data文件和proto文件
-“符合格式”指的是要求xls的每一列的前4行用于定义数据格式。例子如图：
-</code></pre><p><img src="http://git.oschina.net/uploads/images/2016/0219/184941_6538d7d9_99114.png" alt="数据格式" title="数据格式"></p>
-<pre><code>详细格式文档可参考xls_deploy_tool.py 的文件注释。
-</code></pre><p><strong>4. xls_deploy_tool.py生成的文件</strong></p>
-<blockquote>
-<ol>
-<li>生成的data文件是最终在游戏内进行读取的数据文件，以protobuff定义的格式进行压缩存储（或者明文存储，但xls_deploy_tool.py暂时只实现了压缩存储）</li>
-<li>生成的proto文件是用于解释上面这个data文件的解释类。</li>
-</ol>
-</blockquote>
-<p><strong>5. 具体命令行的使用请参考tools/kill.bat</strong></p>
-<p><strong>插件在项目中的使用</strong></p>
-<p><strong>1. 目录结构</strong></p>
-<p><img src="http://git.oschina.net/uploads/images/2016/0222/100944_b3bdf1cb_99114.png" alt="输入图片说明" title="在这里输入图片标题"></p>
-<p>ExcelPlugin           插件总目录</p>
-<pre><code>Editor           插件的扩展插件 （具体请看代码）
-Plugins          第三方库文件
-Scripts          插件的基础脚本
-</code></pre><p>Scene                 场景目录</p>
-<p>Scripts                脚本</p>
-<pre><code>Killer
-   DataConfig
-       ProtoGen
-           tnt_deploy_goods_info        goods_info数据表的C#代码
-           tnt_deploy_goods_info_Ext    goods_info数据表的C#类的扩展
-</code></pre><p>StreamingAssets      Streaming目录  </p>
-<pre><code>DataConfig     配置目录
-     DataConfig                       配置目录，需要将所需生成的excel内容添加进去
-     tnt_deploy_goods_info            goods_info.excel生成的数据存储文件
-     tnt_deploy_hero                  hero.excel生成的数据存储文件
-</code></pre><p><strong>2. 使用流程（以hero.xls为例）</strong></p>
-<pre><code>1. 将hero.xls放到tools/DataConfig目录中
-2. 在Assets/StreamingAssets/DataConfig/DataConfig文件中添加hero，最后结果为下图所示
-</code></pre><p><img src="http://git.oschina.net/uploads/images/2016/0222/111515_e841845f_99114.png" alt="输入图片说明" title="在这里输入图片标题"></p>
-<pre><code>3.点击unity3d导航栏Editor--ExcelToolEditor,打开编辑器。选中hero,点击生成。
-  工具会自动在Assets/Scriptes/Killer/DataConfig/ProtoGen目录生成tnt_deploy_hero.cs和tnt_deploy_hero_Ext.cs
-  如果excel有唯一标识，修改_Ext.cs文件中的GetId接口
-  还会在Assets/StreamingAssets/DataConfig目录生成tnt_deploy_hero.data存储信息
-4.在代码中使用
-      获取所有英雄信息:List&lt;HERO&gt; heros = ProtoDatabase.Instance.GetData&lt;HERO&gt;();
-      根据英雄id获取英雄信息:HERO hero = ProtoDatabase.Instance.GetTypeAndId&lt;HERO&gt;(1);
-</code></pre><p><strong>Git地址：<a href="http://git.oschina.net/huaiyaohuaiyao/UnityExcelPlugin" target="_blank" rel="external">http://git.oschina.net/huaiyaohuaiyao/UnityExcelPlugin</a></strong></p>
-
+        <h3 id="通用流程图"><a href="#通用流程图" class="headerlink" title="通用流程图"></a><strong>通用流程图</strong></h3><p><img src="http://git.oschina.net/uploads/images/2016/0219/160849_26793774_99114.png" alt="流程图" title="通用流程图"></p>
       
     </div>
     
@@ -301,6 +220,10 @@ Scripts          插件的基础脚本
       
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/01/excelplugin/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
