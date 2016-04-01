@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>unity3d读取Excel数据 | 小马快跑</title>
+  <title>小马快跑</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="通用流程图通用流程图简述以hello.xls为例 
 
@@ -13,7 +13,7 @@
 在windows系统下，使用protoc.exe，将proto解释类转成中间格式Hello.desc。
 将中间格式Hello.desc用语言工具">
 <meta property="og:type" content="article">
-<meta property="og:title" content="unity3d读取Excel数据">
+<meta property="og:title" content="小马快跑">
 <meta property="og:url" content="http://yoursite.com/2016/04/01/excelplugin/index.html">
 <meta property="og:site_name" content="小马快跑">
 <meta property="og:description" content="通用流程图通用流程图简述以hello.xls为例 
@@ -27,9 +27,9 @@
 <meta property="og:image" content="http://git.oschina.net/uploads/images/2016/0219/184941_6538d7d9_99114.png">
 <meta property="og:image" content="http://git.oschina.net/uploads/images/2016/0222/100944_b3bdf1cb_99114.png">
 <meta property="og:image" content="http://git.oschina.net/uploads/images/2016/0222/111515_e841845f_99114.png">
-<meta property="og:updated_time" content="2016-04-01T02:48:01.840Z">
+<meta property="og:updated_time" content="2016-04-01T02:54:13.168Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="unity3d读取Excel数据">
+<meta name="twitter:title" content="小马快跑">
 <meta name="twitter:description" content="通用流程图通用流程图简述以hello.xls为例 
 
 
@@ -101,7 +101,7 @@
 						<li>Links</li>
 						
 						
-						<li>Über</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -140,7 +140,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/excel/" style="font-size: 10px;">excel</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/js-槐尧-小马/" style="font-size: 10px;">js 槐尧  小马</a> <a href="/tags/学习/" style="font-size: 10px;">学习</a>
+						<a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/js-槐尧-小马/" style="font-size: 10px;">js 槐尧  小马</a> <a href="/tags/学习/" style="font-size: 10px;">学习</a>
 					</div>
 				</section>
 				
@@ -220,7 +220,7 @@
   
     <div class="article-meta">
       <a href="/2016/04/01/excelplugin/" class="article-date">
-  	<time datetime="2016-04-01T02:41:27.000Z" itemprop="datePublished">2016-04-01</time>
+  	<time datetime="2016-04-01T02:41:27.823Z" itemprop="datePublished">2016-04-01</time>
 </a>
     </div>
   
@@ -228,28 +228,6 @@
     
       <input type="hidden" class="isFancy" />
     
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      unity3d读取Excel数据
-    </h1>
-  
-
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/excel/">excel</a></li></ul>
-	</div>
-
-        
-
-        <div class="clearfix"></div>
-      </div>
-      
     
     <div class="article-entry" itemprop="articleBody">
       
@@ -270,16 +248,24 @@
 </ol>
 <p><img src="http://git.oschina.net/uploads/images/2016/0219/162817_3643dd8f_99114.png" alt="path" title="path"></p>
 <p><strong>安装protobuff</strong></p>
-<pre><code>1.找到下载的工具包中的“全文件压缩包”（protobuf-2.5.0.tar.bz2）和“编译器压缩包”（protoc-2.5.0-win32.zip）。
-2.将“protobuf-2.5.0.tar.bz2”解压。
-3.将“protoc-2.5.0-win32.zip”解压,并将目录添加到本地的环境变量的path中。
-4.在里面创建compiler文件夹，即protobuf-2.5.0\python\google\protobuf\compiler。
-5.将“编译器压缩包”里的protoc.exe拷到protobuf-2.5.0\src。
-6.用命令行进入刚解压的protobuf\python目录，执行命令python setup.py install。
-</code></pre><p><strong>安装xlrd（xls reader）</strong></p>
-<pre><code>1.这里是列表文本 找到下载的工具包中的xlrd-0.9.4.tar.gz并解压
-2.用命令行进入刚解压的xlrd目录，执行命令python setup.py install
-</code></pre><p><strong>xls_deploy_tool.py介绍</strong></p>
+<blockquote>
+<ol>
+<li>找到下载的工具包中的“全文件压缩包”（protobuf-2.5.0.tar.bz2）和“编译器压缩包”（protoc-2.5.0-win32.zip）。</li>
+<li>将“protobuf-2.5.0.tar.bz2”解压。</li>
+<li>将“protoc-2.5.0-win32.zip”解压,并将目录添加到本地的环境变量的path中。</li>
+<li>在里面创建compiler文件夹，即protobuf-2.5.0\python\google\protobuf\compiler。</li>
+<li>将“编译器压缩包”里的protoc.exe拷到protobuf-2.5.0\src。</li>
+<li>用命令行进入刚解压的protobuf\python目录，执行命令python setup.py install。</li>
+</ol>
+</blockquote>
+<p><strong>安装xlrd（xls reader）</strong> </p>
+<blockquote>
+<ol>
+<li>这里是列表文本 找到下载的工具包中的xlrd-0.9.4.tar.gz并解压</li>
+<li>用命令行进入刚解压的xlrd目录，执行命令python setup.py install</li>
+</ol>
+</blockquote>
+<p><strong>xls_deploy_tool.py介绍</strong></p>
 <p><a href="http://https://github.com/jameyli/tnt/tree/master/python" target="_blank" rel="external">xls_deploy_tool.py</a>是腾讯魔方工作室<a href="http://https://github.com/jameyli" target="_blank" rel="external">jameyli</a>同学的作品.xls格式请遵循<a href="https://github.com/jameyli/tnt/blob/master/python/xls_deploy_tool.py" target="_blank" rel="external">此格式</a></p>
 <pre><code>使用方法是在命令行键入如下命令
     python xls_deploy_tool.py &lt;表格名&gt; &lt;xls文件名&gt;
@@ -288,9 +274,13 @@
 </code></pre><p><img src="http://git.oschina.net/uploads/images/2016/0219/184941_6538d7d9_99114.png" alt="数据格式" title="数据格式"></p>
 <pre><code>详细格式文档可参考xls_deploy_tool.py 的文件注释。
 </code></pre><p><strong>4. xls_deploy_tool.py生成的文件</strong></p>
-<pre><code>1. 生成的data文件是最终在游戏内进行读取的数据文件，以protobuff定义的格式进行压缩存储（或者明文存储，但xls_deploy_tool.py暂时只实现了压缩存储）
-2. 生成的proto文件是用于解释上面这个data文件的解释类。
-</code></pre><p><strong>5. 具体命令行的使用请参考tools/kill.bat</strong></p>
+<blockquote>
+<ol>
+<li>生成的data文件是最终在游戏内进行读取的数据文件，以protobuff定义的格式进行压缩存储（或者明文存储，但xls_deploy_tool.py暂时只实现了压缩存储）</li>
+<li>生成的proto文件是用于解释上面这个data文件的解释类。</li>
+</ol>
+</blockquote>
+<p><strong>5. 具体命令行的使用请参考tools/kill.bat</strong></p>
 <p><strong>插件在项目中的使用</strong></p>
 <p><strong>1. 目录结构</strong></p>
 <p><img src="http://git.oschina.net/uploads/images/2016/0222/100944_b3bdf1cb_99114.png" alt="输入图片说明" title="在这里输入图片标题"></p>
@@ -349,7 +339,7 @@ Scripts          插件的基础脚本
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="excelplugin" data-title="unity3d读取Excel数据" data-url="http://yoursite.com/2016/04/01/excelplugin/"></div>
+	<div class="ds-thread" data-thread-key="excelplugin" data-title="" data-url="http://yoursite.com/2016/04/01/excelplugin/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
