@@ -79,7 +79,7 @@
 						<li>Links</li>
 						
 						
-						<li>About</li>
+						<li>Über</li>
 						
 					</ul>
 				</div>
@@ -118,7 +118,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Unity3D/" style="font-size: 10px;">Unity3D</a> <a href="/tags/excel/" style="font-size: 10px;">excel</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/js-槐尧-小马/" style="font-size: 10px;">js 槐尧  小马</a> <a href="/tags/学习/" style="font-size: 10px;">学习</a> <a href="/tags/设计原则/" style="font-size: 10px;">设计原则</a>
+						<a href="/tags/Unity3D/" style="font-size: 10px;">Unity3D</a> <a href="/tags/excel/" style="font-size: 10px;">excel</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/js-槐尧-小马/" style="font-size: 10px;">js 槐尧  小马</a> <a href="/tags/unity3d/" style="font-size: 10px;">unity3d</a> <a href="/tags/学习/" style="font-size: 10px;">学习</a> <a href="/tags/设计原则/" style="font-size: 10px;">设计原则</a>
 					</div>
 				</section>
 				
@@ -222,347 +222,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <pre><code>/* 
- * 作 者: 槐尧 
- * 创建时间: 2012/10/8 16:12:00 
- * 说明:  事件管理
- */
-
-using UnityEngine;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-
-&lt;!--more--&gt;
-
-namespace HyFrameWork
-{
-    public class HyEventManager
-    {
-
-        private static HyEventManager m_instance;
-        public static HyEventManager Instance
-        {
-            get 
-            {
-                if (m_instance == null)
-                {
-                    m_instance = new HyEventManager();
-                }
-                return HyEventManager.m_instance; 
-            }
-        }
-
-        private Dictionary&lt;string, Delegate&gt; m_eventDic = new Dictionary&lt;string, Delegate&gt;();
-
-        /// &lt;summary&gt;
-        /// 判断是否包含该类型的委托
-        /// &lt;/summary&gt;
-        /// &lt;param name=&quot;eventType&quot;&gt;&lt;/param&gt;
-        /// &lt;returns&gt;&lt;/returns&gt;
-        public bool ContainsEvent(string eventType)
-        {
-            return this.m_eventDic.ContainsKey(eventType);
-        }
-
-        /// &lt;summary&gt;
-        /// 清除
-        /// &lt;/summary&gt;
-        public void CleanUp()
-        {
-            m_eventDic.Clear();
-        }
-
-        /// &lt;summary&gt;
-        /// 检查是否该包含该委托，如果没有则加入委托列表
-        /// &lt;/summary&gt;
-        /// &lt;param name=&quot;eventType&quot;&gt;&lt;/param&gt;
-        /// &lt;param name=&quot;listener&quot;&gt;&lt;/param&gt;
-        private void CheckAddingNewListener(string eventType, Delegate listener)
-        {
-            if (!this.m_eventDic.ContainsKey(eventType))
-                this.m_eventDic.Add(eventType, null);
-
-            Delegate tmpDelegate = this.m_eventDic[eventType];
-            if (tmpDelegate != null &amp;&amp; tmpDelegate.GetType() != listener.GetType())
-            {
-                throw new Exception(
-                    string.Format(&quot;try to add incorrect eventtype {0}. needed listener type is {1}, given listener type is {2}.&quot;,
-                    eventType,
-                    tmpDelegate.GetType(),
-                    listener.GetType()));
-            }
-        }
-
-        /// &lt;summary&gt;
-        /// 如果委托列表含有该委托，清除
-        /// &lt;/summary&gt;
-        /// &lt;param name=&quot;eventType&quot;&gt;&lt;/param&gt;
-        /// &lt;param name=&quot;listener&quot;&gt;&lt;/param&gt;
-        /// &lt;returns&gt;&lt;/returns&gt;
-        private bool CheckRemovingListener(string eventType, Delegate listener)
-        {
-            bool result = false;
-            if (!this.m_eventDic.ContainsKey(eventType))
-                result = false;
-            else
-            {
-                Delegate tmpDelegate = this.m_eventDic[eventType];
-                if (tmpDelegate != null &amp;&amp; tmpDelegate.GetType() != listener.GetType())
-                {
-                    throw new Exception(
-                        string.Format(&quot;try to remove incorrect eventtype {0}. needed listener type is {1}, given listener type is {2}.&quot;,
-                        eventType,
-                        tmpDelegate.GetType(),
-                        listener.GetType()));
-                }
-                result = true;
-            }
-            return result;
-        }
-
-        /// &lt;summary&gt;
-        /// 添加事件监听
-        /// &lt;/summary&gt;
-        /// &lt;param name=&quot;eventType&quot;&gt;事件类型&lt;/param&gt;
-        /// &lt;param name=&quot;listener&quot;&gt;回调函数&lt;/param&gt;
-        public void AddEventListener(string eventType, Action listener)
-        {
-            CheckAddingNewListener(eventType, listener);
-            this.m_eventDic[eventType] = (Action)Delegate.Combine((Action)this.m_eventDic[eventType], listener);
-        }
-
-        /// &lt;summary&gt;
-        /// 添加事件监听
-        /// &lt;/summary&gt;
-        /// &lt;param name=&quot;eventType&quot;&gt;事件类型&lt;/param&gt;
-        /// &lt;param name=&quot;listener&quot;&gt;回调函数&lt;/param&gt;
-        public void AddEventListener&lt;T&gt;(string eventType, Action&lt;T&gt; listener)
-        {
-            CheckAddingNewListener(eventType, listener);
-            this.m_eventDic[eventType] = (Action&lt;T&gt;)Delegate.Combine((Action&lt;T&gt;)this.m_eventDic[eventType], listener);
-        }
-
-        /// &lt;summary&gt;
-        /// 添加事件监听,2个参数
-        /// &lt;/summary&gt;
-        /// &lt;param name=&quot;eventType&quot;&gt;事件类型&lt;/param&gt;
-        /// &lt;param name=&quot;listener&quot;&gt;回调函数&lt;/param&gt;
-        public void AddEventListener&lt;T, U&gt;(string eventType, Action&lt;T, U&gt; listener)
-        {
-            CheckAddingNewListener(eventType, listener);
-            this.m_eventDic[eventType] = (Action&lt;T, U&gt;)Delegate.Combine((Action&lt;T, U&gt;)this.m_eventDic[eventType], listener);
-        }
-
-        /// &lt;summary&gt;
-        /// 移除事件监听
-        /// &lt;/summary&gt;
-        /// &lt;param name=&quot;eventType&quot;&gt;时间类型&lt;/param&gt;
-        /// &lt;param name=&quot;listener&quot;&gt;回调函数&lt;/param&gt;
-        public void RemoveEventListener(string eventType, Action listener)
-        {
-            if (CheckRemovingListener(eventType, listener))
-                this.m_eventDic[eventType] = (Action)Delegate.Remove((Action)this.m_eventDic[eventType], listener);
-        }
-
-        /// &lt;summary&gt;
-        /// 移除事件监听，1个参数
-        /// &lt;/summary&gt;
-        /// &lt;param name=&quot;eventType&quot;&gt;时间类型&lt;/param&gt;
-        /// &lt;param name=&quot;listener&quot;&gt;回调函数&lt;/param&gt;
-        public void RemoveEventListener&lt;T&gt;(string eventType, Action&lt;T&gt; listener)
-        {
-            if (CheckRemovingListener(eventType, listener))
-            {
-                Delegate tmpDelegate = (Action&lt;T&gt;)Delegate.Remove((Action&lt;T&gt;)this.m_eventDic[eventType], listener);
-                // remove the last delegate will return null.
-                this.m_eventDic[eventType] = tmpDelegate;
-            }
-        }
-
-        /// &lt;summary&gt;
-        /// 移除事件监听，2个参数
-        /// &lt;/summary&gt;
-        /// &lt;param name=&quot;eventType&quot;&gt;时间类型&lt;/param&gt;
-        /// &lt;param name=&quot;listener&quot;&gt;回调函数&lt;/param&gt;
-        public void RemoveEventListener&lt;T, U&gt;(string eventType, Action&lt;T, U&gt; listener)
-        {
-            if (CheckRemovingListener(eventType, listener))
-                this.m_eventDic[eventType] = (Action&lt;T, U&gt;)Delegate.Remove((Action&lt;T, U&gt;)this.m_eventDic[eventType], listener);
-        }
-
-
-        /// &lt;summary&gt;
-        /// 发送事件消息
-        /// &lt;/summary&gt;
-        /// &lt;param name=&quot;eventType&quot;&gt;事件类型&lt;/param&gt;
-        public void SendEvent(string eventType)
-        {
-            Delegate targetDelegate = null;
-            if (this.m_eventDic.TryGetValue(eventType, out targetDelegate))
-            {
-                if (targetDelegate == null)
-                    return;
-
-                Delegate[] invocationList = targetDelegate.GetInvocationList();
-                for (int i = 0; i &lt; invocationList.Length; i++)
-                {
-                    if (invocationList[i].GetType() != typeof(Action))
-                        throw new Exception(string.Format(&quot;triggerEvnet {0} error : types of parameters are not match.&quot;, eventType));
-
-                    Action action = (Action)invocationList[i];
-                    try
-                    {
-                        action();
-                    }
-                    catch (System.Exception ex)
-                    {
-                        string exMsg = ex.ToString();
-                        Debug.LogError(exMsg);
-                    }
-                }
-            }
-        }
-
-        /// &lt;summary&gt;
-        /// 发送事件消息
-        /// &lt;/summary&gt;
-        /// &lt;typeparam name=&quot;T&quot;&gt;参数类型&lt;/typeparam&gt;
-        /// &lt;param name=&quot;eventType&quot;&gt;事件类型&lt;/param&gt;
-        /// &lt;param name=&quot;params01&quot;&gt;参数&lt;/param&gt;
-        public void SendEvent&lt;T&gt;(string eventType, T params01)
-        {
-            Delegate targetDelegate = null;
-            if (this.m_eventDic.TryGetValue(eventType, out targetDelegate))
-            {
-                if (targetDelegate == null)
-                    return;
-
-                Delegate[] invocationList = targetDelegate.GetInvocationList();
-                for (int i = 0; i &lt; invocationList.Length; i++)
-                {
-                    if (invocationList[i].GetType() != typeof(Action&lt;T&gt;))
-                        throw new Exception(string.Format(&quot;triggerEvnet {0} error : types of parameters are not match. Needed type {1}, given p1 type {2}.&quot;,
-                            eventType, invocationList[i].GetType(),
-                            params01.GetType()));
-
-                    Action&lt;T&gt; action = (Action&lt;T&gt;)invocationList[i];
-                    try
-                    {
-                        action(params01);
-                    }
-                    catch (System.Exception ex)
-                    {
-                        string exMsg = ex.ToString();
-                        Debug.LogError(exMsg);
-                    }
-                }
-            }
-        }
-
-        /// &lt;summary&gt;
-        /// 发送事件消息
-        /// &lt;/summary&gt;
-        /// &lt;param name=&quot;eventType&quot;&gt;事件类型&lt;/param&gt;
-        /// &lt;param name=&quot;params01&quot;&gt;参数1&lt;/param&gt;
-        /// &lt;param name=&quot;params02&quot;&gt;参数2&lt;/param&gt;
-        public void SendEvent&lt;T, U&gt;(string eventType, T params01, U params02)
-        {
-            Delegate targetDelegate = null;
-            if (this.m_eventDic.TryGetValue(eventType, out targetDelegate))
-            {
-                if (targetDelegate == null)
-                    return;
-
-                Delegate[] invocationList = targetDelegate.GetInvocationList();
-                for (int i = 0; i &lt; invocationList.Length; i++)
-                {
-                    if (invocationList[i].GetType() != typeof(Action&lt;T, U&gt;))
-                        throw new Exception(string.Format(
-                            &quot;SendEvent {0} error : types of parameters are not match. Needed type{1}, given p1 p2 type [{2}], [type{3}].&quot;,
-                            eventType,
-                            invocationList[i].GetType(),
-                            params01.GetType(),
-                            params02.GetType()));
-
-                    Action&lt;T, U&gt; action = (Action&lt;T, U&gt;)invocationList[i];
-                    try
-                    {
-                        action(params01, params02);
-                    }
-                    catch (System.Exception ex)
-                    {
-                        string exMsg = ex.ToString();
-                        Debug.LogError(exMsg);
-                    }
-                }
-            }
-        }
-    }
-}
-</code></pre><p><strong>事件系统的使用</strong></p>
-<pre><code>using UnityEngine;
-using System.Collections;
-namespace HyFrameWork
-{
-    /// &lt;summary&gt;
-    /// Event example 事件系统使用
-    /// 1. 初始化注册消息(register event when init.)
-    /// 2. 退出注销消息(unregister event when quit)
-    /// 3. Behaviour类型，一般在OnEnable和OnDisable中完成事件处理
-    /// &lt;/summary&gt;
-    public class EventTest : MonoBehaviour, IHyEventListener
-    {
-        const string EventTestUserInput = &quot;EVENT_TEST_USEREVENT&quot;;
-        void OnEnable()
-        {
-            RegisterEvent();
-        }
-
-        void OnDisable()
-        {
-            UnRegisterEvent();
-        }
-        /// &lt;summary&gt;
-        /// 注册事件
-        /// &lt;/summary&gt;
-        public void RegisterEvent()
-        {
-            HyEventManager.Instance.AddEventListener&lt;string&gt;(EventTestUserInput, this.OnUserInput);
-        }
-
-        /// &lt;summary&gt;
-        /// 注销事件
-        /// &lt;/summary&gt;
-        public void UnRegisterEvent()
-        {
-            HyEventManager.Instance.RemoveEventListener&lt;string&gt;(EventTestUserInput, this.OnUserInput);
-        }
-
-        private void OnUserInput(string msg)
-        {
-            Debug.Log(&quot;[on User input message:&quot; + msg + &quot;]&quot;);
-        }
-
-        void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                // trigger the event.
-                HyEventManager.Instance.SendEvent&lt;string&gt;(EventTestUserInput, &quot;Hello World!&quot;);
-            }
-        }
-    }
-}
-</code></pre>
+        <p><strong>事件系统的封装</strong></p>
       
     </div>
     
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/unity3d/">unity3d</a></li></ul>
+	</div>
+
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/14/eventsystem/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
